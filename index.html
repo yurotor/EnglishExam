@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מבחן באנגלית - כיתה ח'</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f1ea; --paper:#fffdf8; --ink:#1d2433; --muted:#5d6577; --line:#d9d3c4;
+  --accent:#2b5bd7; --accent-soft:#e6edfc; --input:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14171e; --paper:#1c2029; --ink:#e8e9ee; --muted:#9aa1b2; --line:#323846;
+    --accent:#7aa2ff; --accent-soft:#232c45; --input:#232834;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14171e; --paper:#1c2029; --ink:#e8e9ee; --muted:#9aa1b2; --line:#323846;
+  --accent:#7aa2ff; --accent-soft:#232c45; --input:#232834;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:32px 16px 80px}
+.paper{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:36px 40px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 30px rgba(0,0,0,.05)}
+@media (max-width:600px){.paper{padding:22px 16px}}
+.he,[dir=rtl]{font-family:Rubik,Inter,sans-serif}
+[dir=rtl]{text-align:right}
+h1,h2{margin:0;font-family:Rubik,sans-serif}
+h1{font-size:2rem;font-weight:700}
+h2{font-size:1.4rem;font-weight:600;display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+h2 .pts{font-weight:400;font-size:.9rem;color:var(--muted)}
+h3{font-size:1.02rem;font-weight:600;margin:24px 0 10px}
+.sub{color:var(--muted);margin:6px 0 0}
+section{margin-top:40px;padding-top:28px;border-top:2px solid var(--line)}
+.instr{margin:8px 0 18px;color:var(--muted)}
+input[type=text],textarea{width:100%;font:inherit;color:var(--ink);background:var(--input);border:1.5px solid var(--line);border-radius:8px;padding:8px 10px;transition:border-color .15s}
+input[type=text]:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+textarea{min-height:64px;resize:vertical}
+input.he{direction:rtl;text-align:right}
+
+/* vocabulary */
+.vocab{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px}
+@media (max-width:640px){.vocab{grid-template-columns:1fr}.vrow{grid-template-columns:24px 105px 1fr}}
+.vrow{display:grid;grid-template-columns:28px 130px 1fr;align-items:center;gap:8px}
+.num{color:var(--muted);font-size:.85rem;font-variant-numeric:tabular-nums}
+.word{font-weight:600}
+
+/* grammar */
+.q{margin:0 0 18px}
+.q .stem{display:flex;gap:8px}
+.inline{display:inline-block;width:170px !important;padding:4px 8px !important;margin:0 4px}
+.verb{color:var(--muted);font-style:italic}
+.pair{display:grid;grid-template-columns:90px 1fr;gap:8px;align-items:center;margin:8px 0 0 28px}
+.pair span{font-size:.9rem;color:var(--muted);font-family:Rubik,sans-serif}
+@media (max-width:600px){.pair{grid-template-columns:1fr;margin-left:0}.inline{width:110px !important}}
+.tag{font-family:Rubik,sans-serif;font-size:.75rem;padding:1px 8px;border-radius:99px;background:var(--accent-soft);color:var(--accent);margin-left:6px;white-space:nowrap}
+
+/* unseen */
+.text{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:22px 26px;margin-bottom:24px}
+.text h4{font-family:Fraunces,Georgia,serif;font-size:1.3rem;margin:0;text-align:center}
+.text .by{text-align:center;color:var(--muted);margin:2px 0 14px;font-size:.9rem}
+.text p{margin:0 0 12px}
+.opts{list-style:none;padding:0;margin:8px 0 0 28px}
+.opts li{margin:4px 0}
+.opts label{display:flex;gap:10px;align-items:center;padding:6px 10px;border-radius:8px;cursor:pointer}
+.opts label:hover{background:var(--accent-soft)}
+.opts input{width:18px;height:18px;accent-color:var(--accent);flex:none}
+.opts .l{font-weight:600;color:var(--muted);width:14px}
+.open{margin:8px 0 0 28px}
+@media (max-width:600px){.opts,.open{margin-left:0}}
+
+.bar{margin-top:36px;display:flex;justify-content:flex-start}
+button.ghost{font:500 .9rem Rubik,sans-serif;border-radius:9px;padding:8px 16px;cursor:pointer;background:transparent;color:var(--muted);border:1.5px solid var(--line)}
+.footer{text-align:center;color:var(--muted);margin-top:28px;font-family:Rubik,sans-serif;font-size:1.1rem}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="paper">
+
+<header dir="rtl">
+  <h1>מבחן באנגלית · כיתה ח'</h1>
+  <p class="sub">אוצר מילים (25) · דקדוק: <bdi>Present Simple</bdi> ו-<bdi>Present Progressive</bdi> (40) · הבנת הנקרא (35) — סה"כ 100 נקודות</p>
+</header>
+
+<!-- ============ PART 1 ============ -->
+<section>
+  <div dir="rtl">
+    <h2>חלק א' — אוצר מילים <span class="pts">25 נקודות · נקודה לכל מילה</span></h2>
+    <p class="instr">תרגמו את המילים הבאות לעברית.</p>
+  </div>
+  <div class="vocab" id="vocab"></div>
+</section>
+
+<!-- ============ PART 2 ============ -->
+<section>
+  <div dir="rtl">
+    <h2>חלק ב' — דקדוק <span class="pts">40 נקודות · 4 נקודות לשאלה</span></h2>
+    <p class="instr"><bdi>Present Simple</bdi> או <bdi>Present Progressive</bdi>? קראו כל משפט בעיון וחפשו מילות רמז:<br><span dir="ltr" style="display:block;text-align:right;font-style:italic">always · every day · now · at the moment · Look!</span></p>
+    <h3>1. השלימו את המשפטים בצורה הנכונה של הפועל שבסוגריים.</h3>
+  </div>
+  <div id="gramA"></div>
+
+  <h3 dir="rtl">2. כתבו כל משפט בשלילה ובשאלה.</h3>
+  <div id="gramB"></div>
+</section>
+
+<!-- ============ PART 3 ============ -->
+<section>
+  <div dir="rtl">
+    <h2>חלק ג' — הבנת הנקרא <span class="pts">35 נקודות · 5 נקודות לשאלה</span></h2>
+    <p class="instr">קראו את הקטע וענו על השאלות שאחריו. בשאלות האמריקאיות סמנו תשובה אחת בלבד.</p>
+  </div>
+
+  <article class="text">
+    <h4>The Story of a Camera</h4>
+    <p class="by">by Jim Black · <i>Teens Today Magazine</i></p>
+    <p>In December 2007, Lisa Gold was on vacation in Hawaii. One night, she went swimming in the sea with her waterproof camera. The camera fell out of her hand and got lost in the waves. She could not find it anywhere.</p>
+    <p>The next day she returned to the beach to keep searching; she couldn't find her camera. She was very disappointed because there were over 300 pictures in it. "It was my first time in Hawaii. I was upset because I lost all my pictures," she explained.</p>
+    <p>Six years later, Jing, a worker for China Airlines, was walking on a beach in China collecting shells. He saw something unusual in the sand. "I thought it was a strange shell," Jing said. "I was surprised it was a camera. It was very dirty and looked really old. I was curious. I wanted to know what it was doing on the beach. I took it with me to try to solve the mystery."</p>
+    <p>Jing got the camera fixed, and was happy to find that there were still pictures on the memory card. "I knew I could find the owner by using the Internet," Jing said. His manager at the airline helped him by creating a webpage called "China Airlines is Looking for <u>You</u>." It included some pictures from the memory card showing a "mystery woman."</p>
+    <p>Thirty-six hours later, and thousands of kilometers away, in America, Lisa's friend saw the pictures on the Internet. She called Lisa. "Your picture is on a China Airlines webpage!" she said. Lisa got very excited and contacted the airline immediately.</p>
+    <p>China Airlines gave Lisa a free ticket to travel to China to get her long-lost camera. "I was happy to see my pictures again. They brought back some wonderful memories from Hawaii," said Lisa. "It is amazing how far away my camera travelled, and how quickly the Internet helped get it back to me."</p>
+  </article>
+
+  <div id="unseen"></div>
+</section>
+
+<div class="bar" dir="rtl"><button class="ghost" id="resetBtn" type="button">ניקוי כל התשובות</button></div>
+
+<p class="footer" dir="rtl">בהצלחה! 🍀</p>
+</div></div>
+
+<script>
+const VOCAB = ["professional","unusual","anyhow","ability","however","closely","produce","prefer","gain",
+  "seem","select","belief","distance","respond","notice","population","meaning","exchange","mention",
+  "available","keep up","best-selling","normally","variety","control"];
+
+const GRAM_A = [
+  {pre:"The sun", verb:"rise", post:"in the east every morning."},
+  {pre:"Look! My cat", verb:"try", post:"to catch a mouse."},
+  {pre:"Her brother always", verb:"wash", post:"the dishes after meals."},
+  {pre:"Be quiet! The teacher", verb:"explain", post:"a new rule right now."},
+  {pre:"Brian", verb:"read", post:"five books a month."},
+  {pre:"I can't talk to you now. I", verb:"cook", post:"lunch at the moment."},
+];
+const GRAM_B = [
+  "Natasha travels to Turkey every summer.",
+  "Max is sleeping after a hard working day.",
+  "His dog always barks at strangers.",
+  "Ann is searching for a movie to watch tonight.",
+];
+const UNSEEN = [
+  {q:"How did Lisa lose her camera?", pts:5},
+  {q:"Why was Lisa sad about losing her camera?", pts:5},
+  {q:"How did Jing's manager help solve the mystery?", pts:5,
+   opts:["By fixing the camera.","By finding the camera.","By creating a webpage.","By giving Lisa a ticket to China."]},
+  {q:"The word “You” in “China Airlines is Looking for You” (paragraph 4) refers to ___.", pts:5,
+   opts:["the person who works for the airline","the person who found the camera","the person who saw the pictures","the person who lost the camera"]},
+  {q:"Why is the woman in the pictures called a “mystery woman”?", pts:5},
+  {q:"Why did Lisa contact China Airlines? Because she wanted to ___.", pts:5,
+   opts:["meet Jing","visit her friend","travel to China","get her camera back"]},
+  {q:"The text is about ___.", pts:5,
+   opts:["China Airlines giving travelers cameras","a lost camera that was returned to its owner","swimming with a waterproof camera","traveling to Hawaii with a camera"]},
+];
+
+const $ = s => document.querySelector(s);
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+$("#vocab").innerHTML = VOCAB.map((en, i) => `
+  <div class="vrow">
+    <span class="num">${i+1}.</span><span class="word">${esc(en)}</span>
+    <input type="text" class="he" id="v${i}" data-save autocomplete="off" lang="he" aria-label="${esc(en)}">
+  </div>`).join("");
+
+$("#gramA").innerHTML = GRAM_A.map((g, i) => `
+  <div class="q"><div class="stem"><span class="num">${i+1}.</span><div>${esc(g.pre)}
+    <input type="text" class="inline" id="a${i}" data-save autocomplete="off" aria-label="${i+1}">
+    <span class="verb">(${esc(g.verb)})</span> ${esc(g.post)}</div></div></div>`).join("");
+
+$("#gramB").innerHTML = GRAM_B.map((s, i) => `
+  <div class="q">
+    <div class="stem"><span class="num">${GRAM_A.length+i+1}.</span><div>${esc(s)}</div></div>
+    <div class="pair"><span>שלילה</span><input type="text" id="bn${i}" data-save autocomplete="off"></div>
+    <div class="pair"><span>שאלה</span><input type="text" id="bq${i}" data-save autocomplete="off"></div>
+  </div>`).join("");
+
+$("#unseen").innerHTML = UNSEEN.map((u, i) => {
+  const head = `<div class="stem"><span class="num">${i+1}.</span><div>${esc(u.q)} <span class="tag">${u.pts} נק'</span></div></div>`;
+  if (!u.opts) return `<div class="q">${head}<div class="open"><textarea id="u${i}" data-save></textarea></div></div>`;
+  return `<div class="q">${head}<ul class="opts">${u.opts.map((o, j) => `
+    <li><label><input type="checkbox" name="u${i}" id="u${i}_${j}" data-save>
+      <span class="l">${"abcd"[j]}</span><span>${esc(o)}</span></label></li>`).join("")}</ul></div>`;
+}).join("");
+
+// multiple choice: only one box ticked per question
+document.querySelectorAll(".opts input[type=checkbox]").forEach(cb => cb.addEventListener("change", () => {
+  if (cb.checked) document.querySelectorAll(`input[name="${cb.name}"]`).forEach(o => { if (o !== cb) o.checked = false; });
+  save();
+}));
+
+// keep answers on this device so a refresh doesn't lose them
+const KEY = "english-exam-8th-v2";
+function save(){
+  const data = {};
+  document.querySelectorAll("[data-save]").forEach(el => data[el.id] = el.type === "checkbox" ? el.checked : el.value);
+  try { localStorage.setItem(KEY, JSON.stringify(data)); } catch(e) {}
+}
+function load(){
+  let data = null;
+  try { data = JSON.parse(localStorage.getItem(KEY)); } catch(e) {}
+  if (!data) return;
+  document.querySelectorAll("[data-save]").forEach(el => {
+    if (!(el.id in data)) return;
+    if (el.type === "checkbox") el.checked = !!data[el.id]; else el.value = data[el.id];
+  });
+}
+document.addEventListener("input", e => { if (e.target.matches("[data-save]")) save(); });
+load();
+
+$("#resetBtn").addEventListener("click", () => {
+  document.querySelectorAll("[data-save]").forEach(el => el.type === "checkbox" ? el.checked = false : el.value = "");
+  save();
+});
+</script>
+</body>
+</html>
